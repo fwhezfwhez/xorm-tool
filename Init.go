@@ -2,28 +2,40 @@ package xormTool
 
 import (
 	"github.com/xormplus/xorm"
-	"fmt"
+
 )
 var Db *xorm.Engine
 var LocalSession *xorm.Session
 
-func init(){
-	var err error
-	Db, err = xorm.NewPostgreSQL("postgres://postgres:123@localhost:5432/test?sslmode=disable")
-	if err != nil {
-		fmt.Println(err)
-	}
+//func init(){
+//	DataSource("postgres://postgres:123@localhost:5432/test?sslmode=disable")
+//}
 
+func DataSource(dataSource string) (*xorm.Engine,error){
+	var err error
+	Db,err=xorm.NewPostgreSQL(dataSource)
+	if err!=nil{
+		return nil,err
+	}
+	return Db,nil
+}
+func Config(printSQL bool,maxIdleConns int,maxOpenConns int){
+	//2.显示sql语句
+	Db.ShowSQL(printSQL)
+
+	//3.设置连接数
+	Db.SetMaxIdleConns(maxIdleConns)
+	Db.SetMaxOpenConns(maxOpenConns)
+
+	LocalSession = Db.NewSession()
+}
+func DefaultConfig(){
 	//2.显示sql语句
 	Db.ShowSQL(true)
 
 	//3.设置连接数
 	Db.SetMaxIdleConns(2000)
 	Db.SetMaxOpenConns(1000)
-	//type Id struct{
-	//	id int
-	//}
-	//var newId = Id{}
-	Db.Ping()
+
 	LocalSession = Db.NewSession()
 }
