@@ -44,8 +44,18 @@ go get github.com/fwhezfwhez/xorm-tool
     		Name string
     	}
     	
-    	class := make([]Class,0)
-    	db.Select(&class,"select * from class")
+    	classes := make([]Class,0)
+    	db.Select(&classes,"select * from class where id>?",2)
+    	fmt.Println(classes)
+    	
+    	class :=Class{}
+    	db.SelectOne(&class,"select * from class where id=?",2)
     	fmt.Println(class)
+    	
+    	//个性化操作
+    	db:=db.GetDb()
+    	s:=db.NewSession()
+    	...
+    	//do sth specail
     }
 ```
