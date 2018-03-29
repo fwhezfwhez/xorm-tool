@@ -7,9 +7,9 @@ import (
 var Db *xorm.Engine
 var LocalSession *xorm.Session
 
-//func init(){
-//	DataSource("postgres://postgres:123@localhost:5432/test?sslmode=disable")
-//}
+func init(){
+	DataSource("postgres://postgres:123@localhost:5432/test?sslmode=disable")
+}
 
 func DataSource(dataSource string) (*xorm.Engine,error){
 	var err error
@@ -17,6 +17,7 @@ func DataSource(dataSource string) (*xorm.Engine,error){
 	if err!=nil{
 		return nil,err
 	}
+	LocalSession = Db.NewSession()
 	return Db,nil
 }
 func Config(printSQL bool,maxIdleConns int,maxOpenConns int){
@@ -37,5 +38,8 @@ func DefaultConfig(){
 	Db.SetMaxIdleConns(2000)
 	Db.SetMaxOpenConns(1000)
 
-	LocalSession = Db.NewSession()
+
+}
+func GetDb() *xorm.Engine{
+	return Db
 }

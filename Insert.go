@@ -18,6 +18,7 @@ func Insert(sql string,args ...interface{}) (int,error){
 		return -1,err
 	}
 	session.Commit()
+
 	return id,err
 }
 

@@ -38,21 +38,14 @@ go get github.com/fwhezfwhez/xorm-tool
     		return
     	}
     	fmt.Println(id)
-    
-    	//查询,查询解耦不出！！！！提不出api,直接拿原生session操作吧
+    	
     	type Class struct {
     		Id int
     		Name string
     	}
-    	session :=db.Db.NewSession()
+    	
     	class := make([]Class,0)
-    	session.Begin()
-    	err=session.SQL("select * from class").Find(&class)
-    	if err!=nil {
-    		session.Rollback()
-    		panic(err)
-    	}
+    	db.Select(&class,"select * from class")
     	fmt.Println(class)
-    	session.Commit()
     }
 ```

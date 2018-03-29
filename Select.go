@@ -8,23 +8,31 @@ type Class struct{
 	Name string
 }
 
-/*
-		Class无法解耦！！
- */
-func Select(sql string,args...interface{}) ([]Class,error){
+func Select(dest interface{},sql string,args...interface{}) (error){
 	session:=Db.NewSession()
 	session.Begin()
 	//*[]xormToll.Class
-	dest := make([]Class,0)
-
 	//怎么转化为*[]xormToll.Class
-	err:=session.SQL(sql,args...).Find(&dest)
+	err:=session.SQL(sql,args...).Find(dest)
 	if err!=nil{
 		session.Rollback()
-		return nil,err
+		return err
 	}
 	session.Commit()
-	return dest,nil
+	return nil
+}
+
+func SelectOne(dest interface{},sql string,args...interface{})error{
+	session:=Db.NewSession()
+	defer session.Close()
+	session.Begin()
+	_,err :=session.SQL(sql,args...).Get(dest)
+	if err!=nil {
+		session.Rollback()
+		return err
+	}
+	session.Commit()
+	return nil
 }
 
 func SelectCount(sql string,args...interface{})(int,error){
