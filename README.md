@@ -14,10 +14,12 @@ go get github.com/fwhezfwhez/xorm-tool
     	"fmt"
     )
     func main(){
-    
-    	//1.insert
     	db.DataSource("postgres://postgres:123@localhost:5432/test?sslmode=disable")
-    	db.DefaultConfig()
+        db.DefaultConfig()	
+        //config specifically
+        // db.Config(true,2000,1000)
+        
+    	//1.insert
     	id,err:=db.Insert("insert into class(name) values(?) returning id","测试数据")
     	if err!=nil{
     		fmt.Println(err)
