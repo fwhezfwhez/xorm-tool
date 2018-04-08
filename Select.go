@@ -1,6 +1,9 @@
 package xormTool
 
 import (
+	"strconv"
+	"fmt"
+	"strings"
 )
 
 type Class struct{
@@ -46,4 +49,45 @@ func SelectCount(sql string,args...interface{})(int,error){
 	}
 	session.Commit()
 	return count,nil
+}
+
+func DynamicSelect(dest interface{},basicSql string,whereMap [][]string,orderBy []string,Asc string,limit int,offset int,args...interface{})(error){
+	sql :=rollingSql(basicSql,whereMap,orderBy,Asc,limit,offset,args...)
+	return Select(dest,sql,args...)
+}
+
+func DynamicSelectOne(dest interface{},basicSql string,whereMap [][]string,orderBy []string,Asc string,limit int,offset int,args...interface{})(error){
+	sql :=rollingSql(basicSql,whereMap,orderBy,Asc,limit,offset,args...)
+	return SelectOne(dest,sql,args...)
+}
+
+func DynamicSelectCount(basicSql string,whereMap [][]string,orderBy []string,Asc string,limit int,offset int,args...interface{})(int,error){
+	sql :=rollingSql(basicSql,whereMap,orderBy,Asc,limit,offset,args...)
+	return SelectCount(sql,args...)
+}
+
+func rollingSql(basicSql string,whereMap [][]string,orderBy []string,Asc string,limit int,offset int,args...interface{})string{
+	var sql =basicSql
+	//1.处理where
+	if len(whereMap)!=0 {
+		sql =sql+" where "
+		for _,v:=range whereMap{
+			//v[0]表示性质，and 还是or,v[1]表示field，比如name，age,v[2]表示条件符号,=,>,<,<>,like
+			sql = sql +" "+ v[0]+" "+v[1]+v[2]+"?"
+		}
+	}
+	//fmt.Println("处理where完毕:"+sql)
+
+	//2.处理Orderby
+	if len(orderBy)!=0 && orderBy!=nil{
+		sql = sql+" order by "+strings.Join(orderBy,",")+" "+Asc+" "
+	}
+	//fmt.Println("处理order,asc完毕:"+sql)
+
+	//3.处理limit,offset
+	if limit!=-1&&offset!=-1{
+		sql = sql + " limit "+strconv.Itoa(limit)+" offset "+strconv.Itoa(offset)
+	}
+	fmt.Println(sql)
+	return sql
 }

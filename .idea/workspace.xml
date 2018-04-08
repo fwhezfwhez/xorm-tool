@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21844db7-48ce-4a87-aebf-9f03d2228c8c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/Select.go" afterPath="$PROJECT_DIR$/Select.go" />
+      <change beforePath="$PROJECT_DIR$/Select_test.go" afterPath="$PROJECT_DIR$/Select_test.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +19,8 @@
       <file leaf-file-name="Init.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Init.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+            <state relative-caret-position="198">
+              <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="76" />
               <folding>
                 <element signature="e#18#57#0" expanded="true" />
               </folding>
@@ -25,10 +28,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Update.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Update.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Update_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Update_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Insert_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Insert_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="434">
               <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding>
                 <element signature="e#18#40#0" expanded="true" />
@@ -40,8 +63,8 @@
       <file leaf-file-name="Insert.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Insert.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="589">
+              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="e#18#51#0" expanded="true" />
               </folding>
@@ -52,7 +75,7 @@
       <file leaf-file-name="session_get.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../github.com/xormplus/xorm/session_get.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="310">
               <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding />
             </state>
@@ -63,15 +86,31 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="411">
-                <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+              <first_editor relative-caret-position="335">
+                <caret line="101" column="35" lean-forward="false" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
                 <folding>
-                  <marker date="1522315296924" expanded="true" signature="162:222" ph="..." />
-                  <marker date="1522315296924" expanded="true" signature="238:1271" ph="{...}" />
-                  <marker date="1522315296924" expanded="true" signature="461:505" ph="{...}" />
-                  <marker date="1522315296924" expanded="true" signature="631:675" ph="{...}" />
-                  <marker date="1522315296924" expanded="true" signature="801:845" ph="{...}" />
-                  <marker date="1522315296924" expanded="true" signature="896:935" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="162:222" ph="..." />
+                  <marker date="1523156125976" expanded="true" signature="238:3272" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="463:507" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="653:697" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="843:887" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="938:977" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="1225:1276" ph="/.../" />
+                  <marker date="1523156125976" expanded="true" signature="1225:3191" ph="/.../" />
+                  <marker date="1523156125976" expanded="true" signature="1299:1417" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="1610:1647" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="1693:1731" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="1777:1816" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="1945:2001" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="2049:3191" ph="/.../" />
+                  <marker date="1523156125976" expanded="true" signature="2193:2236" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="2364:2432" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="2489:3191" ph="/.../" />
+                  <marker date="1523156125976" expanded="true" signature="2696:2741" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="2793:2839" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="2891:2938" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="3077:3093" ph="{...}" />
+                  <marker date="1523156125976" expanded="true" signature="3077:3146" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -79,24 +118,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Init.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../github.com/fwhezfwhez/xorm-tool/Init.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-              <folding>
-                <marker date="1522315193920" expanded="true" signature="765:767" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Select.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Select.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="95">
+              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="e#18#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,21 +133,9 @@
       <file leaf-file-name="session_find.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../github.com/xormplus/xorm/session_find.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            <state relative-caret-position="496">
+              <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="engine.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../github.com/xormplus/xorm/engine.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="276" column="22" lean-forward="false" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
-              <folding>
-                <marker date="1520835041054" expanded="true" signature="39683:40059" ph="/.../" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -126,9 +143,11 @@
       <file leaf-file-name="Select_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Select_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="441">
+              <caret line="118" column="16" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="118" selection-end-column="16" />
+              <folding>
+                <element signature="e#18#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,9 +174,9 @@
         <option value="$PROJECT_DIR$/Delete.go" />
         <option value="$PROJECT_DIR$/Personal.go" />
         <option value="$PROJECT_DIR$/Insert.go" />
+        <option value="$PROJECT_DIR$/Init.go" />
         <option value="$PROJECT_DIR$/Select.go" />
         <option value="$PROJECT_DIR$/Select_test.go" />
-        <option value="$PROJECT_DIR$/Init.go" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -190,6 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,7 +221,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -223,24 +242,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestSelectOne in Select_test.go">
-    <configuration name="TestInsert in Insert_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+  <component name="RunManager" selected="Go Test.TestDynamicSelectCount in Select_test.go">
+    <configuration name="TestDynamicSelect in Select_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="xormTool" />
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="xormTool" />
-      <pattern value="^TestInsert$" />
+      <pattern value="^TestDynamicSelect$" />
     </configuration>
-    <configuration name="TestLocalSessionInsert in Insert_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration name="TestDynamicSelectCount in Select_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="xormTool" />
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="xormTool" />
-      <pattern value="^TestLocalSessionInsert$" />
+      <pattern value="^TestDynamicSelectCount$" />
+    </configuration>
+    <configuration name="TestDynamicSelectOne in Select_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="xormTool" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="xormTool" />
+      <pattern value="^TestDynamicSelectOne$" />
     </configuration>
     <configuration name="TestSelect in Select_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="xormTool" />
@@ -260,29 +288,20 @@
       <package value="xormTool" />
       <pattern value="^TestSelectOne$" />
     </configuration>
-    <configuration name="TestUpdate in Update_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="xormTool" />
-      <working_directory value="$PROJECT_DIR$" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="xormTool" />
-      <pattern value="^TestUpdate$" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Test.TestInsert in Insert_test.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestLocalSessionInsert in Insert_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestSelect in Select_test.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestUpdate in Update_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.TestSelectOne in Select_test.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Test.TestSelect in Select_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestSelectOne in Select_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestDynamicSelect in Select_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectOne in Select_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectCount in Select_test.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.TestSelectOne in Select_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.TestSelect in Select_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.TestLocalSessionInsert in Insert_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestInsert in Insert_test.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.TestUpdate in Update_test.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectCount in Select_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.TestDynamicSelect in Select_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectOne in Select_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestSelectOne in Select_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.TestSelect in Select_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -290,47 +309,46 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestInsert_in_Insert_test_go - 2018.03.14 at 17h 03m 24s.xml">
-      <configuration name="TestInsert in Insert_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelectCount_in_Select_test_go - 2018.04.08 at 10h 41m 00s.xml">
+      <configuration name="TestDynamicSelectCount in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestInsert_in_Insert_test_go - 2018.03.14 at 17h 13m 25s.xml">
-      <configuration name="TestInsert in Insert_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelectCount_in_Select_test_go - 2018.04.08 at 10h 49m 44s.xml">
+      <configuration name="TestDynamicSelectCount in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestLocalSessionInsert_in_Insert_test_go - 2018.03.14 at 17h 14m 02s.xml">
-      <configuration name="TestLocalSessionInsert in Insert_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelectCount_in_Select_test_go - 2018.04.08 at 10h 50m 31s.xml">
+      <configuration name="TestDynamicSelectCount in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestLocalSessionInsert_in_Insert_test_go - 2018.03.14 at 17h 14m 49s.xml">
-      <configuration name="TestLocalSessionInsert in Insert_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelectOne_in_Select_test_go - 2018.04.08 at 10h 36m 21s.xml">
+      <configuration name="TestDynamicSelectOne in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSelectOne_in_Select_test_go - 2018.03.29 at 17h 14m 41s.xml">
-      <configuration name="TestSelectOne in Select_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelectOne_in_Select_test_go - 2018.04.08 at 10h 36m 42s.xml">
+      <configuration name="TestDynamicSelectOne in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSelectOne_in_Select_test_go - 2018.03.29 at 17h 15m 31s.xml">
-      <configuration name="TestSelectOne in Select_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelectOne_in_Select_test_go - 2018.04.08 at 10h 41m 24s.xml">
+      <configuration name="TestDynamicSelectOne in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSelect_in_Select_test_go - 2018.03.12 at 11h 53m 30s.xml">
-      <configuration name="TestSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelect_in_Select_test_go - 2018.04.08 at 10h 41m 30s.xml">
+      <configuration name="TestDynamicSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSelect_in_Select_test_go - 2018.03.12 at 13h 11m 25s.xml">
-      <configuration name="TestSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelect_in_Select_test_go - 2018.04.08 at 10h 42m 45s.xml">
+      <configuration name="TestDynamicSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSelect_in_Select_test_go - 2018.03.29 at 17h 09m 48s.xml">
-      <configuration name="TestSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelect_in_Select_test_go - 2018.04.08 at 10h 43m 43s.xml">
+      <configuration name="TestDynamicSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestUpdate_in_Update_test_go - 2018.03.12 at 13h 18m 05s.xml">
-      <configuration name="TestUpdate in Update_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestDynamicSelect_in_Select_test_go - 2018.04.08 at 10h 44m 04s.xml">
+      <configuration name="TestDynamicSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.096354164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -398,9 +416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="30" />
-          <folding>
-            <element signature="e#26#64#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -425,7 +440,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="e#18#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -433,7 +450,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#18#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -453,12 +472,28 @@
           <first_editor relative-caret-position="1333">
             <caret line="46" column="36" lean-forward="true" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
             <folding>
-              <marker date="1522315296924" expanded="true" signature="162:222" ph="..." />
-              <marker date="1522315296924" expanded="true" signature="238:1271" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="461:505" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="631:675" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="801:845" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="896:935" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="162:222" ph="..." />
+              <marker date="1523156125976" expanded="true" signature="238:3272" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="463:507" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="653:697" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="843:887" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="938:977" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1225:1276" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="1225:3191" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="1299:1417" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1610:1647" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1693:1731" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1777:1816" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1945:2001" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2049:3191" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="2193:2236" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2364:2432" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2489:3191" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="2696:2741" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2793:2839" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2891:2938" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="3077:3093" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="3077:3146" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -640,24 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Update.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../github.com/xormplus/xorm/session_cond.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Update_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -679,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,25 +707,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-210">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#26#64#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../github.com/fwhezfwhez/xorm-tool/Init.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="899">
           <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <marker date="1522315193920" expanded="true" signature="765:767" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../github.com/xormplus/xorm/engine.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="7998">
           <caret line="276" column="22" lean-forward="false" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
           <folding>
             <marker date="1520835041054" expanded="true" signature="39683:40059" ph="/.../" />
@@ -715,49 +729,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../github.com/xormplus/xorm/session_find.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        <state relative-caret-position="496">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../github.com/xormplus/xorm/session_get.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="310">
           <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Select.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Select_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Insert.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="e#18#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Insert_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="434">
           <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
           <folding>
             <element signature="e#18#40#0" expanded="true" />
@@ -765,12 +753,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Update.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Insert.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#18#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Init.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+        <state relative-caret-position="198">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="76" />
           <folding>
             <element signature="e#18#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Update_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Select.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#18#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Select_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="118" column="16" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="118" selection-end-column="16" />
+          <folding>
+            <element signature="e#18#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,15 +812,31 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="411">
-            <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <first_editor relative-caret-position="335">
+            <caret line="101" column="35" lean-forward="false" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
             <folding>
-              <marker date="1522315296924" expanded="true" signature="162:222" ph="..." />
-              <marker date="1522315296924" expanded="true" signature="238:1271" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="461:505" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="631:675" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="801:845" ph="{...}" />
-              <marker date="1522315296924" expanded="true" signature="896:935" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="162:222" ph="..." />
+              <marker date="1523156125976" expanded="true" signature="238:3272" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="463:507" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="653:697" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="843:887" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="938:977" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1225:1276" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="1225:3191" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="1299:1417" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1610:1647" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1693:1731" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1777:1816" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="1945:2001" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2049:3191" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="2193:2236" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2364:2432" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2489:3191" ph="/.../" />
+              <marker date="1523156125976" expanded="true" signature="2696:2741" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2793:2839" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="2891:2938" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="3077:3093" ph="{...}" />
+              <marker date="1523156125976" expanded="true" signature="3077:3146" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
