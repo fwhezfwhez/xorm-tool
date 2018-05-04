@@ -2,14 +2,10 @@ package xormTool
 
 import (
 	"github.com/xormplus/xorm"
-
 )
 var Db *xorm.Engine
 var LocalSession *xorm.Session
 
-func init(){
-	DataSource("postgres://postgres:123@localhost:5432/test?sslmode=disable")
-}
 
 func DataSource(dataSource string) (*xorm.Engine,error){
 	var err error
@@ -23,7 +19,6 @@ func DataSource(dataSource string) (*xorm.Engine,error){
 func Config(printSQL bool,maxIdleConns int,maxOpenConns int){
 	//2.显示sql语句
 	Db.ShowSQL(printSQL)
-
 	//3.设置连接数
 	Db.SetMaxIdleConns(maxIdleConns)
 	Db.SetMaxOpenConns(maxOpenConns)
