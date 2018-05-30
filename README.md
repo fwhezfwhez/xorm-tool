@@ -58,68 +58,131 @@ go get github.com/fwhezfwhez/xorm-tool
     	
     	//4.动态查询条件DynamicSelect
     	    //4.1DynamicSelect
-    		type User struct{
-        		Id int
-        		Name string
-        		ClassId int `db:"class_id"`
-        		Description string
-        	}
-        	users :=make([]User,0)
-        	orderBy :=make([]string,0)
-        	orderBy = append(orderBy,"id")
-        	whereMap := make([][]string,0)
-        	whereMap = append(whereMap,[]string{
-        		"","name","=",
-        	})
-        	whereMap = append(whereMap,[]string{
-        		"and","id",">",
-        	})
-        	whereMap = append(whereMap,[]string{
-        		"and","id","<>",
-        	})
-        	err=db.DynamicSelect(&users,"select * from public.user",whereMap,orderBy,"desc",2,0,"ft4",1035,1)
-        	if err!=nil{
-        		fmt.Println(err)
-        		return
-        	}
-        	fmt.Println(users)
-    	    
-        	//4.2DynamicSelectOne
-        	    user :=User{}
-            	whereMap2 := make([][]string,0)
-            	whereMap2 = append(whereMap2,[]string{
-            		"","id","=",
-            	})
-            	err=db.DynamicSelectOne(&user,"select * from public.user",whereMap2,nil,"desc",2,0,1036)
-            	if err!=nil{
-            		fmt.Println(err)
-            		return
-            	}
-            	fmt.Println(user)
-            
-            //4.3 DynamicSelectCount
+			    var users=make([]User,0)
+                arg1 :="ft"
+				arg2 :=1035
+				arg3 :=1
             	orderBy3 :=make([]string,0)
             	orderBy3 = append(orderBy3,"id")
             	whereMap3 := make([][]string,0)
-            	whereMap3 = append(whereMap3,[]string{
+				
+				if arg1!=""{
+				    whereMap3 = append(whereMap3,[]string{
             		"","name","=",
-            	})
-            	whereMap3 = append(whereMap3,[]string{
-            		"and","id",">",
-            	})
-            	whereMap3 = append(whereMap3,[]string{
-            		"and","id","<>",
-            	})
-            	count,err:=db.DynamicSelectCount("select * from public.user",whereMap3,nil,"desc",2,0,"ft4",1035,1)
+            	    })
+				}
+
+				if arg2!=0{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","age","=",
+            	    })
+				}
+				if arg3!=0{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","class","=",
+            	    })
+				}				
+            	count,err:=db.DynamicSelect(&users,"select * from public.user",whereMap3,nil,"desc",2,0,arg1,arg2,arg3)
+            	if err!=nil{
+            		fmt.Println(err)
+            		return 
+            	}
+    	    
+        	//4.2DynamicSelectOne
+			    var user = User{}
+        	    arg1 :="ft"
+				arg2 :=1035
+				arg3 :=1
+            	orderBy3 :=make([]string,0)
+            	orderBy3 = append(orderBy3,"id")
+            	whereMap3 := make([][]string,0)
+				
+				if arg1!=""{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","name","=",
+            	    })
+				}
+
+				if arg2!=0{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","age","=",
+            	    })
+				}
+				if arg3!=0{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","class","=",
+            	    })
+				}				
+            	count,err:=db.DynamicSelectOne(&user,"select * from public.user",whereMap3,nil,"desc",2,0,arg1,arg2,arg3)
+            	if err!=nil{
+            		fmt.Println(err)
+            		return 
+            	}
+            
+            //4.3 DynamicSelectCount   // 弃用,推荐使用DynamicSelectOne(&count,"select count(*) from xx",x,x,x,x,x,x)
+			    arg1 :="ft"
+				arg2 :=1035
+				arg3 :=1
+            	orderBy3 :=make([]string,0)
+            	orderBy3 = append(orderBy3,"id")
+            	whereMap3 := make([][]string,0)
+				
+				if arg1!=""{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","name","=",
+            	    })
+				}
+
+				if arg2!=0{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","age","=",
+            	    })
+				}
+				if arg3!=0{
+				    whereMap3 = append(whereMap3,[]string{
+            		"","class","=",
+            	    })
+				}				
+            	count,err:=db.DynamicSelectCount("select * from public.user",whereMap3,nil,"desc",2,0,arg1,arg2,arg3)
             	if err!=nil{
             		fmt.Println(err)
             		return 
             	}
             	fmt.Println(count)
-    	//个性化操作
-    	db:=db.GetDb()
-    	s:=db.NewSession()
-    	...
-    	//do sth specail
-    }
+		//5. 动态连表查询 DynamicJoinSelect/DynamicJoinSelectOne,区别同上
+		    	orders := make([]PayOrder, 0)
+				orderBy := make([]string, 0)
+				orderBy = append(orderBy, "ttime")
+
+
+				joinMap :=make([]string,0)
+				joinMap = append(joinMap,"o.productid=a.productId")
+				whereMap := make([][]string, 0)
+				whereMap = append(whereMap, []string{
+					"and", "a.adsId", "=",
+				})
+				//select distinct o.* from productid_ads a,payorder o where o.productid=a.productId and a.adsId='666@qq.com'
+
+				err := DynamicJoinSelect(&orders, "select distinct o.* from productid_ads a,payorder o", whereMap,joinMap, orderBy, "desc", 20, 0, "666@qq.com")
+				if err != nil {
+					t.Fatal(err)
+				}
+				t.Log(orders)
+		//6. 多数据源操作**跨源操作仅仅能使用xorm原生db**
+				db.NewDataSource("source2","xxxxxxx")
+				db.NewDataSource("source3","xxxxxxxx")
+				使用:
+				var engine *xorm.Engine = db.Dbs["source2"]
+				engine.SQL().Get()
+				engine.SQL().Find()
+				engine.Exec()
+				用法同xorm的engine对象。
+		//7. 全局session
+		     session :=db.LocalSession
+			 多源:
+			 session :=db.LocalSessions["source2"]
+			 session用法同engine
+				session.SQL().Get()
+				session.SQL().Find()
+				session.Exec()
 ```

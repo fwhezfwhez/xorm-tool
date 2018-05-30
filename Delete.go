@@ -1,4 +1,6 @@
 package xormTool
+//删除数据并返回删除的id
+//Delete("delete from tUser where id=?",5)   returns 5,nil | -1 ,err
 func Delete(sql string,args...interface{})(int,error){
 	var id int
 

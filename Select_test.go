@@ -173,3 +173,48 @@ func BenchmarkRemoveZero(b *testing.B){
 	}
 	b.Log(args)
 }
+
+func TestDynamicJoinSelect(t *testing.T){
+	type PayOrder struct {
+		Id          int       `xorm:"id" json:"id"`
+		OrderId     string    `xorm:"orderid" json:"order_id"`
+		Cid         string    `xorm:"cid" json:"cid"`
+		Pversion    string    `xorm:"pversion" json:"pVersion"`
+		Ttime       time.Time `xorm:"ttime" json:"tTime"`
+		Ip          string    `xorm:"ip" json:"ip"`
+		OrderStatus string    `xorm:"orderstatus" json:"order_status"`
+		Phone       string    `xorm:"phone" json:"phone"`
+		Uname       string    `xorm:"uname" json:"uName"`
+		PayStatus   string    `xorm:"paystatus" json:"pay_status"`
+		Money       string    `xorm:"money" json:"money"`
+		BillType    string    `xorm:"billtype" json:"bill_type"`
+		ProductId   string    `xorm:"productid" json:"product_id"`
+		TtimeUnix   string    `xorm:"ttimeunix" json:"tTime_unix"`
+
+		TravelDate string `xorm:"traveldate" json:"travel_date"`
+		Num        string `xorm:"num" json:"num"`
+		UserNames  string `xorm:"usernames" json:"user_names"`
+		AppType    string `xorm:"apptype" json:"app_type"`
+	}
+
+
+	DataSource("postgres://medium:mediuml4eLxglxL8@111.231.137.127:5432/medium?sslmode=disable")
+	orders := make([]PayOrder, 0)
+	orderBy := make([]string, 0)
+	orderBy = append(orderBy, "ttime")
+
+
+	joinMap :=make([]string,0)
+	joinMap = append(joinMap,"o.productid=a.productId")
+	whereMap := make([][]string, 0)
+	whereMap = append(whereMap, []string{
+		"and", "a.adsId", "=",
+	})
+	//select distinct o.* from productid_ads a,payorder o where o.productid=a.productId and a.adsId='666@qq.com'
+
+	err := DynamicJoinSelect(&orders, "select distinct o.* from productid_ads a,payorder o", whereMap,joinMap, orderBy, "desc", 20, 0, "666@qq.com")
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(orders)
+}

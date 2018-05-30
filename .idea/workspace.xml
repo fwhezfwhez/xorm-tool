@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="21844db7-48ce-4a87-aebf-9f03d2228c8c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Init.go" afterPath="$PROJECT_DIR$/Init.go" />
-      <change beforePath="$PROJECT_DIR$/Insert_test.go" afterPath="$PROJECT_DIR$/Insert_test.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Init.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Init.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Init.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="182">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -40,7 +38,7 @@
       <file leaf-file-name="Select.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Select.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
+            <state relative-caret-position="962">
               <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding />
             </state>
@@ -110,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Select_test.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Select_test.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Select_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1716">
-              <caret line="68" column="5" lean-forward="false" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+            <state relative-caret-position="364">
+              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -154,8 +152,8 @@
         <option value="$PROJECT_DIR$/Select.go" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Init.go" />
-        <option value="$PROJECT_DIR$/Select_test.go" />
         <option value="$PROJECT_DIR$/Insert_test.go" />
+        <option value="$PROJECT_DIR$/Select_test.go" />
       </list>
     </option>
   </component>
@@ -187,7 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -200,11 +197,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test_X" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://G:/go_workspace/GOPATH/src/xormTool/Init.go" />
   </component>
@@ -220,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestLocalSessionInsert in Insert_test.go">
+  <component name="RunManager" selected="Go Test.TestSelect in Select_test.go">
     <configuration name="TestDynamicSelect in Select_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="xormTool" />
       <working_directory value="$PROJECT_DIR$" />
@@ -257,29 +255,29 @@
       <package value="xormTool" />
       <pattern value="^TestLocalSessionInsert$" />
     </configuration>
-    <configuration name="TestSelectOne in Select_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration name="TestSelect in Select_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="xormTool" />
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="xormTool" />
-      <pattern value="^TestSelectOne$" />
+      <pattern value="^TestSelect$" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Test.TestSelectOne in Select_test.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestDynamicSelect in Select_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectOne in Select_test.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectCount in Select_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.TestLocalSessionInsert in Insert_test.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Test.TestDynamicSelect in Select_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectOne in Select_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectCount in Select_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.TestLocalSessionInsert in Insert_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestSelect in Select_test.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.TestLocalSessionInsert in Insert_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectCount in Select_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.TestDynamicSelect in Select_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectOne in Select_test.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.TestSelectOne in Select_test.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Test.TestSelect in Select_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.TestLocalSessionInsert in Insert_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectCount in Select_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestDynamicSelect in Select_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.TestDynamicSelectOne in Select_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -287,12 +285,6 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestDynamicSelect_in_Select_test_go - 2018.04.08 at 10h 42m 45s.xml">
-      <configuration name="TestDynamicSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestDynamicSelect_in_Select_test_go - 2018.04.08 at 10h 43m 43s.xml">
-      <configuration name="TestDynamicSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestDynamicSelect_in_Select_test_go - 2018.04.08 at 10h 44m 04s.xml">
       <configuration name="TestDynamicSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -317,12 +309,18 @@
     <history-entry file="TestLocalSessionInsert_in_Insert_test_go - 2018.04.26 at 12h 00m 27s.xml">
       <configuration name="TestLocalSessionInsert in Insert_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestSelect_in_Select_test_go - 2018.05.30 at 15h 55m 06s.xml">
+      <configuration name="TestSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSelect_in_Select_test_go - 2018.05.30 at 15h 55m 30s.xml">
+      <configuration name="TestSelect in Select_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3109375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -703,7 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Select.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
+        <state relative-caret-position="962">
           <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding />
         </state>
@@ -725,14 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Select_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="68" column="5" lean-forward="false" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Insert_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -743,8 +733,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Init.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="182">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Select_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding />
         </state>
       </provider>

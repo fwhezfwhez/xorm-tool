@@ -3,6 +3,7 @@ package xormTool
 import (
 	"strconv"
 	"strings"
+	"fmt"
 )
 
 type Class struct {
@@ -59,6 +60,88 @@ func DynamicSelect(dest interface{}, basicSql string, whereMap [][]string, order
 
 func DynamicSelectOne(dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
 	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = removeZero(args)
+	return SelectOne(dest, sql, args...)
+}
+
+func DynamicJoinSelect(dest interface{},basicSql string,whereMap [][]string,joinMap []string,orderBy []string,asc string, limit int,offset int,args ...interface{})(error){
+	//basicSql="select a.* from payorder a,productid_ads b "
+	sql :=basicSql
+	//连接查询条件，注意joinMap的值是否有空格和and由输入自行控制，比如joinMap=[" a.id=b.userId ","and a.id=5"]
+		if joinMap!=nil ||len((joinMap))!=0{
+			for _,v:=range joinMap{
+				sql = sql + " where "+v
+			}
+		}
+
+		if len(whereMap) != 0 {
+			if !(joinMap!=nil ||len((joinMap))!=0) {
+				sql = sql + " where "
+			}
+			for _, v := range whereMap {
+				//v[0]表示性质，and 还是or,v[1]表示field，比如name，age,v[2]表示条件符号,=,>,<,<>,like
+				if v[2] == "between" {
+					sql = sql + " " + v[0] + " " + v[1] + " " + "between" + " " + "?" + " " + "and" + " " + "?" + " "
+					continue
+				}
+
+				sql = sql + " " + v[0] + " " + v[1] + " " + v[2] + " " + "?"
+			}
+		}
+		//fmt.Println("处理where完毕:"+sql)
+
+		//2.处理Orderby和asc
+		if len(orderBy) != 0 && orderBy != nil {
+			sql = sql + " order by " + strings.Join(orderBy, ",") + " " + asc + " "
+		}
+		//fmt.Println("处理order,asc完毕:"+sql)
+
+		//3.处理limit,offset
+		if limit != -1 && offset != -1 {
+			sql = sql + " limit " + strconv.Itoa(limit) + " offset " + strconv.Itoa(offset)
+		}
+		fmt.Println(sql)
+	    args = removeZero(args)
+	    return Select(dest, sql, args...)
+}
+
+func DynamicJoinSelectOne(dest interface{},basicSql string,whereMap [][]string,joinMap []string,orderBy []string,asc string, limit int,offset int,args ...interface{})(error){
+	//basicSql="select a.* from payorder a,productid_ads b "
+	sql :=basicSql
+	//连接查询条件，注意joinMap的值是否有空格和and由输入自行控制，比如joinMap=[" a.id=b.userId ","and a.id=5"]
+	if joinMap!=nil ||len((joinMap))!=0{
+		for _,v:=range joinMap{
+			sql = sql + " where "+v
+		}
+	}
+
+	if len(whereMap) != 0 {
+		if !(joinMap!=nil ||len((joinMap))!=0) {
+			sql = sql + " where "
+		}
+		for _, v := range whereMap {
+			//v[0]表示性质，and 还是or,v[1]表示field，比如name，age,v[2]表示条件符号,=,>,<,<>,like
+			if v[2] == "between" {
+				sql = sql + " " + v[0] + " " + v[1] + " " + "between" + " " + "?" + " " + "and" + " " + "?" + " "
+				continue
+			}
+
+			sql = sql + " " + v[0] + " " + v[1] + " " + v[2] + " " + "?"
+		}
+	}
+	//fmt.Println("处理where完毕:"+sql)
+
+	//2.处理Orderby和asc
+	if len(orderBy) != 0 && orderBy != nil {
+		sql = sql + " order by " + strings.Join(orderBy, ",") + " " + asc + " "
+	}
+	//fmt.Println("处理order,asc完毕:"+sql)
+
+	//3.处理limit,offset
+	if limit != -1 && offset != -1 {
+		sql = sql + " limit " + strconv.Itoa(limit) + " offset " + strconv.Itoa(offset)
+	}
+	fmt.Println(sql)
 	args = removeZero(args)
 	return SelectOne(dest, sql, args...)
 }
@@ -128,6 +211,9 @@ func removeZero(slice []interface{}) []interface{}{
 }
 
 func ifZero(arg interface{}) bool {
+	if arg==nil{
+		return true
+	}
 	switch v := arg.(type) {
 	case int, float64, int32, int16, int64, float32:
 		if v == 0 {
