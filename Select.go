@@ -220,7 +220,7 @@ func ifZero(arg interface{}) bool {
 			return true
 		}
 	case string:
-		if v == "" || v == "%%" {
+		if v == "" || v == "%%" ||v=="%"{
 			return true
 		}
 	default:

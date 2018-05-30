@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21844db7-48ce-4a87-aebf-9f03d2228c8c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Select.go" afterPath="$PROJECT_DIR$/Select.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +26,7 @@
       <file leaf-file-name="Insert.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Insert.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
+            <state relative-caret-position="780">
               <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
               <folding>
                 <element signature="e#18#51#0" expanded="true" />
@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Select.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Select.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Select.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="962">
-              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="497">
+              <caret line="222" column="41" lean-forward="true" selection-start-line="222" selection-start-column="41" selection-end-line="222" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/Insert_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
-              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -69,29 +69,9 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1430">
+              <first_editor relative-caret-position="1508">
                 <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-                <folding>
-                  <marker date="1523156400411" expanded="false" signature="162:222" ph="..." />
-                  <marker date="1523156400411" expanded="true" signature="238:3347" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="358:441" ph="/.../" />
-                  <marker date="1523156400411" expanded="true" signature="538:582" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="728:772" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="918:962" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="1013:1052" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="1300:1351" ph="/.../" />
-                  <marker date="1523156400411" expanded="true" signature="1374:1492" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="1685:1722" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="1768:1806" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="1852:1891" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="2020:2076" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="2268:2311" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="2439:2507" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="2771:2816" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="2868:2914" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="2966:3013" ph="{...}" />
-                  <marker date="1523156400411" expanded="true" signature="3152:3221" ph="{...}" />
-                </folding>
+                <folding />
               </first_editor>
               <second_editor />
             </state>
@@ -108,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Select_test.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Select_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Select_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
@@ -122,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/Delete.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
-              <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -149,11 +129,11 @@
         <option value="$PROJECT_DIR$/Delete.go" />
         <option value="$PROJECT_DIR$/Personal.go" />
         <option value="$PROJECT_DIR$/Insert.go" />
-        <option value="$PROJECT_DIR$/Select.go" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Init.go" />
         <option value="$PROJECT_DIR$/Insert_test.go" />
         <option value="$PROJECT_DIR$/Select_test.go" />
+        <option value="$PROJECT_DIR$/Select.go" />
       </list>
     </option>
   </component>
@@ -185,7 +165,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,6 +176,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -653,7 +633,7 @@
     <entry file="file://$PROJECT_DIR$/Delete.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -661,29 +641,9 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1430">
+          <first_editor relative-caret-position="1508">
             <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-            <folding>
-              <marker date="1523156400411" expanded="false" signature="162:222" ph="..." />
-              <marker date="1523156400411" expanded="true" signature="238:3347" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="358:441" ph="/.../" />
-              <marker date="1523156400411" expanded="true" signature="538:582" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="728:772" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="918:962" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="1013:1052" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="1300:1351" ph="/.../" />
-              <marker date="1523156400411" expanded="true" signature="1374:1492" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="1685:1722" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="1768:1806" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="1852:1891" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="2020:2076" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="2268:2311" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="2439:2507" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="2771:2816" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="2868:2914" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="2966:3013" ph="{...}" />
-              <marker date="1523156400411" expanded="true" signature="3152:3221" ph="{...}" />
-            </folding>
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -691,19 +651,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Insert.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
+        <state relative-caret-position="780">
           <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding>
             <element signature="e#18#51#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Select.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="962">
-          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +678,7 @@
     <entry file="file://$PROJECT_DIR$/Insert_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -743,6 +695,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Select.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="222" column="41" lean-forward="true" selection-start-line="222" selection-start-column="41" selection-end-line="222" selection-end-column="41" />
           <folding />
         </state>
       </provider>
