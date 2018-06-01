@@ -4,6 +4,7 @@ import (
 	"strconv"
 	"strings"
 	"fmt"
+	"errors"
 )
 
 type Class struct {
@@ -12,7 +13,6 @@ type Class struct {
 }
 
 func Select(dest interface{}, sql string, args ...interface{}) (error) {
-
 	session := Db.NewSession()
 	session.Begin()
 	//*[]xormToll.Class
@@ -26,6 +26,21 @@ func Select(dest interface{}, sql string, args ...interface{}) (error) {
 	return nil
 }
 
+func SelectByDb(key string, dest interface{},sql string,args ...interface{})(error){
+	if dbTemp,ok :=Dbs[key];!ok{
+		return errors.New("没有找到key为"+key+"的数据源，使用db.NewDataSource(key,'xxxxx')来添加多个数据源")
+	}else {
+		session := dbTemp.NewSession()
+		session.Begin()
+		err := session.SQL(sql, args...).Find(dest)
+		if err != nil {
+			session.Rollback()
+			return err
+		}
+		session.Commit()
+		return nil
+	}
+}
 func SelectOne(dest interface{}, sql string, args ...interface{}) error {
 	session := Db.NewSession()
 	defer session.Close()
@@ -39,6 +54,23 @@ func SelectOne(dest interface{}, sql string, args ...interface{}) error {
 	return nil
 }
 
+func SelectOneByDb(key string, dest interface{},sql string,args ...interface{})(error){
+	if dbTemp,ok :=Dbs[key];!ok{
+		return errors.New("没有找到key为"+key+"的数据源，使用db.NewDataSource(key,'xxxxx')来添加多个数据源")
+	}else {
+		session := dbTemp.NewSession()
+		session.Begin()
+		_,err := session.SQL(sql, args...).Get(dest)
+		if err != nil {
+			session.Rollback()
+			return err
+		}
+		session.Commit()
+		return nil
+	}
+}
+
+//
 func SelectCount(sql string, args ...interface{}) (int, error) {
 	session := Db.NewSession()
 	defer session.Close()
@@ -52,12 +84,22 @@ func SelectCount(sql string, args ...interface{}) (int, error) {
 	return count, nil
 }
 
+func DynamicSelectByDb(key string,dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
+	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = removeZero(args)
+	return SelectByDb(key,dest, sql, args...)
+}
 func DynamicSelect(dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
 	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
 	args = removeZero(args)
 	return Select(dest, sql, args...)
 }
 
+func DynamicSelectOneByDb(key string,dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
+	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = removeZero(args)
+	return SelectOne(dest, sql, args...)
+}
 func DynamicSelectOne(dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
 	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
 	args = removeZero(args)

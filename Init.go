@@ -49,26 +49,38 @@ func NewDataSource(key string,dataSource string)(*xorm.Engine,error){
 
 //实例属性配置，可设置是否显示sql语句，最大连接数和最大闲置数
 func Config(printSQL bool,maxIdleConns int,maxOpenConns int){
-	//2.显示sql语句
-	Db.ShowSQL(printSQL)
-	//3.设置连接数
-	Db.SetMaxIdleConns(maxIdleConns)
-	Db.SetMaxOpenConns(maxOpenConns)
-
-	LocalSession = Db.NewSession()
+	for k,_ :=range Dbs{
+		Dbs[k].ShowSQL(printSQL)
+		Dbs[k].SetMaxOpenConns(maxOpenConns)
+		Dbs[k].SetMaxIdleConns(maxIdleConns)
+	}
+	////2.显示sql语句
+	//Db.ShowSQL(printSQL)
+	////3.设置连接数
+	//Db.SetMaxIdleConns(maxIdleConns)
+	//Db.SetMaxOpenConns(maxOpenConns)
 }
 
 //默认的db实例配置
 func DefaultConfig(){
-	//2.显示sql语句
-	Db.ShowSQL(true)
+	for k,_ :=range Dbs{
+		Dbs[k].ShowSQL(true)
+		Dbs[k].SetMaxOpenConns(2000)
+		Dbs[k].SetMaxIdleConns(1000)
+	}
 
-	//3.设置连接数
-	Db.SetMaxIdleConns(2000)
-	Db.SetMaxOpenConns(1000)
+	////2.显示sql语句
+	//Db.ShowSQL(true)
+	//
+	////3.设置连接数
+	//Db.SetMaxIdleConns(2000)
+	//Db.SetMaxOpenConns(1000)
 }
 
 //
-func GetDb() *xorm.Engine{
-	return Db
+func GetDb(key string) *xorm.Engine{
+	if key==""{
+		return Db
+	}
+	return Dbs[key]
 }
