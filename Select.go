@@ -276,6 +276,16 @@ func DynamicSelectCount(basicSql string, whereMap [][]string, orderBy []string, 
 	return SelectCount(sql, args...)
 }
 
+func SelectRemoveZero(dest interface{},sql string,args ...interface{})(error){
+	args = removeZero(args)
+	return Select(dest,sql,args...)
+}
+
+func SelectOneRemoveZero(dest interface{},sql string,args ...interface{})(error){
+	args = removeZero(args)
+	return SelectOne(dest,sql,args...)
+}
+
 func rollingSql(basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int) string {
 	var sql = basicSql
 	//1.处理where
