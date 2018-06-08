@@ -7,7 +7,7 @@ import (
 
 func TestSelectCount(t *testing.T) {
 	DataSource("postgres://postgres:123@localhost:5432/test?sslmode=disable")
-	count, err := SelectCount("select * from class")
+	count, err := SelectCount("select * from class limit ? offset ?",10,1)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -131,7 +131,7 @@ func TestRemove(t *testing.T) {
 		1, ti,1,
 	}
 	t.Log("原始数据:",args)
-	args = remove(args, 1)
+	args = Remove(args, 1)
 	t.Log("删除后:",args)
 }
 func BenchmarkRemove(b *testing.B){
@@ -144,7 +144,7 @@ func BenchmarkRemove(b *testing.B){
 	}
 	b.Log("原始数据:",args)
 	for i:=0;i<b.N;i++{
-		args = remove(args, 1)
+		args = Remove(args, 1)
 	}
 	b.Log("删除后:",args)
 }
@@ -156,7 +156,7 @@ func TestRemoveZero(t *testing.T) {
 	args := []interface{}{
 		1, 0.5, "test", ti,"","%%",
 	}
-	args=removeZero(args)
+	args=RemoveZero(args)
 	t.Log(args)
 }
 
@@ -169,7 +169,7 @@ func BenchmarkRemoveZero(b *testing.B){
 		b.Fatal(er)
 	}
 	for i:=0;i<b.N;i++{
-		args=removeZero(args)
+		args=RemoveZero(args)
 	}
 	b.Log(args)
 }
@@ -217,4 +217,32 @@ func TestDynamicJoinSelect(t *testing.T){
 		t.Fatal(err)
 	}
 	t.Log(orders)
+}
+
+func TestPrepareIn(t *testing.T) {
+	var args = []interface{}{
+		1,2,3,4,5,
+	}
+	t.Log(PrepareIn(args))
+}
+
+func TestSelectIn(t *testing.T) {
+	DataSource("postgres://postgres:123@localhost:5432/test?sslmode=disable")
+	Db.ShowSQL(true)
+	type Class struct {
+		Id   int
+		Name string
+	}
+	var args = []interface{}{1,2,3,4,5,6,7,8,9,10}
+	classes := make([]Class, 0)
+	whereMap :=make([][]string,0)
+	whereMap = append(whereMap,[]string{
+		"","id","in",PrepareIn(args),
+	})
+	err := DynamicSelect(&classes, "select * from class",whereMap,nil,"",-1,-1,args...)
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(classes)
+
 }

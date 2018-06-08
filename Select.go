@@ -85,24 +85,24 @@ func SelectCount(sql string, args ...interface{}) (int, error) {
 }
 
 func DynamicSelectByDb(key string,dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
-	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
-	args = removeZero(args)
+	sql := RollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = RemoveZero(args)
 	return SelectByDb(key,dest, sql, args...)
 }
 func DynamicSelect(dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
-	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
-	args = removeZero(args)
+	sql := RollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = RemoveZero(args)
 	return Select(dest, sql, args...)
 }
 
 func DynamicSelectOneByDb(key string,dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
-	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
-	args = removeZero(args)
+	sql := RollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = RemoveZero(args)
 	return SelectOne(dest, sql, args...)
 }
 func DynamicSelectOne(dest interface{}, basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (error) {
-	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
-	args = removeZero(args)
+	sql := RollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = RemoveZero(args)
 	return SelectOne(dest, sql, args...)
 }
 
@@ -143,7 +143,7 @@ func DynamicJoinSelectByDb(key string,dest interface{},basicSql string,whereMap 
 		sql = sql + " limit " + strconv.Itoa(limit) + " offset " + strconv.Itoa(offset)
 	}
 	fmt.Println(sql)
-	args = removeZero(args)
+	args = RemoveZero(args)
 	return SelectByDb(key,dest, sql, args...)
 }
 func DynamicJoinSelect(dest interface{},basicSql string,whereMap [][]string,joinMap []string,orderBy []string,asc string, limit int,offset int,args ...interface{})(error){
@@ -183,7 +183,7 @@ func DynamicJoinSelect(dest interface{},basicSql string,whereMap [][]string,join
 			sql = sql + " limit " + strconv.Itoa(limit) + " offset " + strconv.Itoa(offset)
 		}
 		fmt.Println(sql)
-	    args = removeZero(args)
+	    args = RemoveZero(args)
 	    return Select(dest, sql, args...)
 }
 
@@ -224,7 +224,7 @@ func DynamicJoinSelectOneByDb(key string,dest interface{},basicSql string,whereM
 		sql = sql + " limit " + strconv.Itoa(limit) + " offset " + strconv.Itoa(offset)
 	}
 	fmt.Println(sql)
-	args = removeZero(args)
+	args = RemoveZero(args)
 	return SelectOneByDb(key,dest, sql, args...)
 }
 
@@ -266,27 +266,27 @@ func DynamicJoinSelectOne(dest interface{},basicSql string,whereMap [][]string,j
 		sql = sql + " limit " + strconv.Itoa(limit) + " offset " + strconv.Itoa(offset)
 	}
 	fmt.Println(sql)
-	args = removeZero(args)
+	args = RemoveZero(args)
 	return SelectOne(dest, sql, args...)
 }
 
 func DynamicSelectCount(basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int, args ...interface{}) (int, error) {
-	sql := rollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
-	args = removeZero(args)
+	sql := RollingSql(basicSql, whereMap, orderBy, Asc, limit, offset)
+	args = RemoveZero(args)
 	return SelectCount(sql, args...)
 }
 
 func SelectRemoveZero(dest interface{},sql string,args ...interface{})(error){
-	args = removeZero(args)
+	args = RemoveZero(args)
 	return Select(dest,sql,args...)
 }
 
 func SelectOneRemoveZero(dest interface{},sql string,args ...interface{})(error){
-	args = removeZero(args)
+	args = RemoveZero(args)
 	return SelectOne(dest,sql,args...)
 }
 
-func rollingSql(basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int) string {
+func RollingSql(basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int) string {
 	var sql = basicSql
 	//1.处理where
 	if len(whereMap) != 0 {
@@ -295,6 +295,52 @@ func rollingSql(basicSql string, whereMap [][]string, orderBy []string, Asc stri
 			//v[0]表示性质，and 还是or,v[1]表示field，比如name，age,v[2]表示条件符号,=,>,<,<>,like
 			if v[2] == "between" {
 				sql = sql + " " + v[0] + " " + v[1] + " " + "between" + " " + "?" + " " + "and" + " " + "?" + " "
+				continue
+			}
+			if v[2] == "in" {
+				sql = sql + " " + v[0] + " " + v[1] + " " + "in" + " " +v[3]
+				continue
+			}
+			sql = sql + " " + v[0] + " " + v[1] + " " + v[2] + " " + "?"
+		}
+	}
+	//fmt.Println("处理where完毕:"+sql)
+
+	//2.处理Orderby和asc
+	if len(orderBy) != 0 && orderBy != nil {
+		sql = sql + " order by " + strings.Join(orderBy, ",") + " " + Asc + " "
+	}
+	//fmt.Println("处理order,asc完毕:"+sql)
+
+	//3.处理limit,offset
+	if limit != -1 && offset != -1 {
+		sql = sql + " limit " + strconv.Itoa(limit) + " offset " + strconv.Itoa(offset)
+	}
+	//fmt.Println(sql)
+	return sql
+}
+
+
+/*
+	if v[2] =="in"{
+				sql = sql + "" +v[1]+" "+"in"+ " "+()
+				continue
+			}
+ */
+
+func RollingSqlIn(basicSql string, whereMap [][]string, orderBy []string, Asc string, limit int, offset int) string {
+	var sql = basicSql
+	//1.处理where
+	if len(whereMap) != 0 {
+		sql = sql + " where "
+		for _, v := range whereMap {
+			//v[0]表示性质，and 还是or,v[1]表示field，比如name，age,v[2]表示条件符号,=,>,<,<>,like,V[3]仅表示in的参数
+			if v[2] == "between" {
+				sql = sql + " " + v[0] + " " + v[1] + " " + "between" + " " + "?" + " " + "and" + " " + "?" + " "
+				continue
+			}
+			if v[2] == "in" {
+				sql = sql + " " + v[0] + " " + v[1] + " " + "in" + " " +v[3]
 				continue
 			}
 
@@ -316,35 +362,34 @@ func rollingSql(basicSql string, whereMap [][]string, orderBy []string, Asc stri
 	//fmt.Println(sql)
 	return sql
 }
-
-func remove(slice []interface{}, elem interface{}) []interface{}{
+func Remove(slice []interface{}, elem interface{}) []interface{}{
 	if len(slice) == 0 {
 		return slice
 	}
 	for i, v := range slice {
 		if v == elem {
 			slice = append(slice[:i], slice[i+1:]...)
-			return remove(slice,elem)
+			return Remove(slice,elem)
 			break
 		}
 	}
 	return slice
 }
-func removeZero(slice []interface{}) []interface{}{
+func RemoveZero(slice []interface{}) []interface{}{
 	if len(slice) == 0 {
 		return slice
 	}
 	for i, v := range slice {
-		if ifZero(v) {
+		if IfZero(v) {
 			slice = append(slice[:i], slice[i+1:]...)
-			return removeZero(slice)
+			return RemoveZero(slice)
 			break
 		}
 	}
 	return slice
 }
 
-func ifZero(arg interface{}) bool {
+func IfZero(arg interface{}) bool {
 	if arg==nil{
 		return true
 	}
@@ -361,4 +406,19 @@ func ifZero(arg interface{}) bool {
 		return false
 	}
 	return false
+}
+
+
+//if inArr!=nil||len(inArr)!=0{
+//	  whereMap = append(whereMap,[]string{
+//          "and","id","in"
+//   })
+//}
+
+func PrepareIn(inArr []interface{}) string{
+	var tmp = make([]string,0)
+	for i:=0;i<len(inArr);i++{
+		tmp=append(tmp,"?")
+	}
+	return " ("+strings.Join(tmp,",")+") "
 }

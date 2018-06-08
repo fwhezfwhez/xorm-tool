@@ -1,7 +1,6 @@
 package xormTool
 
 import (
-	"github.com/astaxie/beego/session"
 	"errors"
 )
 

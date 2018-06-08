@@ -50,8 +50,8 @@ func LocalSessionInsert(sql string,args ...interface{}) (int,error){
 	_,err:=LocalSession.SQL(sql,args...).Get(&id)
 	if err!=nil {
 		LocalSession.Rollback()
-		return -1,nil
+		return -1,err
 	}
 	LocalSession.Commit()
-	return id,err
+	return id,nil
 }
