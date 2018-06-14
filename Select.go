@@ -402,6 +402,10 @@ func IfZero(arg interface{}) bool {
 		if v == "" || v == "%%" ||v=="%"{
 			return true
 		}
+	case *string, *int, *int64, *int32, *int16, *int8, *float32, *float64:
+		if v==nil {
+			return true
+		}
 	default:
 		return false
 	}
@@ -422,3 +426,4 @@ func PrepareIn(inArr []interface{}) string{
 	}
 	return " ("+strings.Join(tmp,",")+") "
 }
+
