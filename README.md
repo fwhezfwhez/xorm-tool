@@ -185,4 +185,21 @@ go get github.com/fwhezfwhez/xorm-tool
 				session.SQL().Get()
 				session.SQL().Find()
 				session.Exec()
+		
+		//8.动态update
+		  type Tmp struct{
+		  	Name string `xorm:"name"`
+		  	Id int `xorm:"id"`
+		  }
+		  t:= Tmp{Name:"高中m班",Id:7}
+		  whereMap := make([][]string,0)
+		  var teacherName = "Mr X"
+		  if teacherName!=""{
+		  	whereMap = append(whereMap,[]string{
+		  		"","teachername","=",
+		  	})
+		  }
+		  db.DynamicUpdate("default","update class",t,whereMap,t.Name,t.Id,teacherName)
+		  
+	}	  
 ```
