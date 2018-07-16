@@ -32,6 +32,19 @@ func DataSource(dataSource string) (*xorm.Engine,error){
 	return Db,nil
 }
 
+//指定各个参数的形式初始化引擎
+func DataSouceByKV(kvFormat string)(*xorm.Engine,error){
+	var err error
+	Db,err=xorm.NewEngine("postgres", kvFormat)
+	if err!=nil{
+		return nil,err
+	}
+	LocalSession = Db.NewSession()
+
+	Dbs["default"] = Db
+	LocalSessions["default"] = LocalSession
+	return Db,nil
+}
 //新增数据源,以键值保存到全局Dbs里
 func NewDataSource(key string,dataSource string)(*xorm.Engine,error){
 	var err error
@@ -47,6 +60,20 @@ func NewDataSource(key string,dataSource string)(*xorm.Engine,error){
 	return DbNew,nil
 }
 
+//新增数据源,以键值保存到全局Dbs里
+func NewDataSourceByKvs(key string,kvFormat string)(*xorm.Engine,error){
+	var err error
+	DbNew,err:=xorm.NewEngine("postgres", kvFormat)
+	if err!=nil{
+		return nil,err
+	}
+	LocalSessionNew := DbNew.NewSession()
+
+
+	Dbs[key] = DbNew
+	LocalSessions[key] = LocalSessionNew
+	return DbNew,nil
+}
 //实例属性配置，可设置是否显示sql语句，最大连接数和最大闲置数
 func Config(printSQL bool,maxIdleConns int,maxOpenConns int){
 	for k,_ :=range Dbs{
